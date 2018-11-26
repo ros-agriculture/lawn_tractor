@@ -1,5 +1,5 @@
 ## Simulation settings
-resolution 0.02
+resolution 0.01
 interval_sim 100 # simulation timestep in milliseconds
 ## Load a static map
 model(
