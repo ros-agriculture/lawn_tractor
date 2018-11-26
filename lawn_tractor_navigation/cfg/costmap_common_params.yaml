@@ -1,0 +1,38 @@
+# file: costmap_common_params.yaml
+# # Make sure to preserve indentation if copied (for all yaml
+# files)
+
+footprint: [ [-0.125,0.125], [0.125,0.125], [0.125,-0.125],
+[-0.125,-0.125] ]
+
+transform_tolerance: 0.5
+
+map_type: costmap
+
+global_frame: map
+
+robot_base_frame: base_link
+
+obstacle_layer:
+        enabled: true
+        obstacle_range: 3.0
+        raytrace_range: 4.0
+        track_unknown_space: true
+        combination_method: 1
+        observation_sources: laser_scan_sensor
+        laser_scan_sensor: {data_type: LaserScan, topic: scan,
+                marking: true, clearing: true}
+
+inflation_layer:
+        enabled:  true
+        inflation_radius: 0.5
+
+static_layer:
+        enabled: true
+
+
+
+
+
+
+

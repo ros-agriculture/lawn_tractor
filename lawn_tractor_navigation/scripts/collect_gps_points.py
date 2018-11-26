@@ -95,7 +95,7 @@ def getPaths():
     global location_collect
     rospack = rospkg.RosPack()
     
-    location_collect = rospack.get_path('ros_lawn_tractor') + "/gps_points_file.txt"
+    location_collect = rospack.get_path('lawn_tractor_navigation') + "/gps_points_file.txt"
 
 
 def collect_gps():

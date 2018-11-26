@@ -1,0 +1,13 @@
+# file: local_costmap_params.yaml
+
+local_costmap:
+  update_frequency: 5.0
+  publish_frequency: 2.0
+  static_map: false
+  rolling_window: true
+  width: 5.5 ## -> computation time: teb_local_planner
+  height: 5.5   # -> computation time: teb_local_planner
+  resolution: 0.1 # -> computation time: teb_local_planner
+  plugins:
+    - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+
