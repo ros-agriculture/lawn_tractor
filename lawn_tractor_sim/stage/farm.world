@@ -1,0 +1,22 @@
+## Simulation settings
+resolution 0.02
+interval_sim 100 # simulation timestep in milliseconds
+## Load a static map
+model(
+name "field"
+bitmap "../maps/field.png"
+size [ 100.0 100.0 2.0 ]
+pose [ 5.0 5.0 0.0 0.0 ]
+color "gray30"
+)
+
+## Spawn robot
+position(
+name "robot"
+size [ 0.6 0.25 0.40 ] # (x,y,z) - bounding box of the robot
+origin [ 0.2 0.0 0.0 0.0] # correct center of rotation (x,y,z,beta)
+drive "car" # kinematic model of a car-like robot
+wheelbase 0.4 # distance between rear and front axles
+localization "gps"
+pose [ 20.0 20.0 0.0 0.0 ] # initial pose (x,y,z,beta[deg])
+)

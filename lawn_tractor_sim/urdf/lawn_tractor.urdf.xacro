@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="lawn_tractor">
+  <link name="base_link" />
+  <link name="base_footprint" />
+  <link name="chassis">
+    <visual>
+      <origin xyz=".05 0 0" rpy="0 0 3.14159266" scale="1 1 1"/>
+      <geometry>
+        <mesh filename="package://lawn_tractor_sim/meshes/lawn_tractor.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gps" />
+  <link name="camera" />
+
+  <joint name="base_footprint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0" />
+  </joint>
+
+  <joint name="chassis" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0" />
+  </joint>
+
+  <joint name="gps" type="fixed">
+    <parent link="base_link"/>
+    <child link="gps"/>
+    <origin xyz="1 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="camera" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera"/>
+    <origin xyz="1 1 0" rpy="0 0 00" />
+  </joint>
+</robot>

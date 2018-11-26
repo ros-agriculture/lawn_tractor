@@ -1,0 +1,63 @@
+<!-- file: robot_in_stage.launch -->
+<launch>
+<!-- ************** Global Parameters *************** -->
+<param name="/use_sim_time" value="true"/>
+
+<!-- ************** Stage Simulator *************** -->
+<node pkg="stage_ros" type="stageros" name="stageros"
+	 args="-g runs headless $(find lawn_tractor_sim)/stage/farm.world">
+  <remap from="base_scan" to="scan"/>
+</node>
+
+
+<!-- ************** Robot Description *************** -->
+    <!-- robot_description is used by nodes that publish to joint_states. -->
+    <param name="robot_description"
+           command="$(find xacro)/xacro --inorder $(find lawn_tractor_sim)/urdf/lawn_tractor.urdf.xacro"/>
+
+    <!-- Read joint positions from joint_states, then publish the vehicle's
+         state to tf. -->
+    <node name="vehicle_state_publisher" pkg="robot_state_publisher"
+          type="robot_state_publisher">
+      <param name="publish_frequency" value="30.0"/>
+    </node>
+
+
+<!-- ************** Navigation *************** -->
+<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+	<rosparam file="$(find lawn_tractor_navigation)/config/costmap_common_params.yaml" 
+		command="load" ns="global_costmap"/>
+	<rosparam file="$(find lawn_tractor_navigation)/config/costmap_common_params.yaml"
+		 command="load" ns="local_costmap"/>
+	<rosparam file="$(find lawn_tractor_navigation)/config/local_costmap_params.yaml"
+		 command="load" />
+	<rosparam file="$(find lawn_tractor_navigation)/config/global_costmap_params.yaml"
+		 command="load" />
+	<rosparam file="$(find lawn_tractor_navigation)/config/teb_local_planner_params_carlike.yaml"
+		 command="load" />
+
+	<param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+	<param name="planner_frequency" value="1.0" />
+	<param name="planner_patience" value="5.0" />
+
+	<param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
+	<param name="controller_frequency" value="5.0" />
+	<param name="controller_patience" value="15.0" />
+</node>
+
+
+<!-- ****** Maps ***** -->
+<node name="map_server" pkg="map_server" type="map_server"
+		 args="$(find lawn_tractor_sim)/maps/farm.yaml" output="screen">
+	<param name="frame_id" value="map"/>
+</node>
+
+<!-- ****** Fake localization for map and gps ***** -->
+<node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0.0 0.0 0.0 0 0 0.0 /map /odom 100"/>
+
+
+<!-- ****** RVIZ ***** -->
+<node name="tractor_viz" pkg="rviz" type="rviz" output="screen"
+     args="$(find lawn_tractor_sim)/rviz/tractor_viz.rviz">
+</node>
+</launch>
