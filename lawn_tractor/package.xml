@@ -1,0 +1,17 @@
+ckage>
+  <name>lawn_tractor</name>
+  <version>0.0.1</version>
+  <description>The lawn tractor robot meta package</description>
+
+  <maintainer email="matt@rosagriculture.org">Matt Droter</maintainer>
+
+  <license>MIT</license>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>lawn_tractor_navigation</run_depend>
+  
+  <export>
+    <metapackage/>
+  </export>
+
+</package>
