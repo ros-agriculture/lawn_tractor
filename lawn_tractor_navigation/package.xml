@@ -14,6 +14,8 @@
   <build_depend>rospy</build_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
+  <build_depend>cmake_modules</build_depend>
+  <run_depend>cmake_modules</run_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>move_base</exec_depend>
