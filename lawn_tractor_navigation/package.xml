@@ -14,7 +14,13 @@
   <build_depend>rospy</build_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
+  <build_depend>nav_core</build_depend>
   <build_depend>cmake_modules</build_depend>
+  <build_depend>teb_local_planner</build_depend>
+  <build_depend>global_planner</build_depend>
+  <exec_depend>teb_local_planner</exec_depend>
+  <exec_depend>global_planner</exec_depend>
+  <exec_depend>nav_core</exec_depend>
   <exec_depend>cmake_modules</exec_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
