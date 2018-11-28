@@ -49,3 +49,7 @@ prompt$ ./start.sh
 <pre>
 docker/prompt$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 </pre>
+
+When rviz starts it doesn't load the rviz config file.  You will need to go to File and load sim config file.
+Sometimes when you press the File tab it just shows black.  You will need to stop rviz and relaunch the sim:
+https://youtu.be/yF0pPZHdhtI
