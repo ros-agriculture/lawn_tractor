@@ -9,7 +9,7 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <run_depend>lawn_tractor_navigation</run_depend>
-  
+
   <export>
     <metapackage/>
   </export>
