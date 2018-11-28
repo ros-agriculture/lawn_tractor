@@ -53,6 +53,7 @@
 
 <!-- ****** Fake localization for map and gps ***** -->
 <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0.0 0.0 0.0 0 0 0.0 /map /odom 100"/>
+<node pkg="tf" type="static_transform_publisher" name="map_to_utm" args="0.0 0.0 0.0 0 0 0.0 /map /utm 100"/>
 <node pkg="lawn_tractor_sim" type="odom_to_lla.py" name="odom_to_lla" output="screen"/>
 
 <!-- ****** RVIZ ***** -->

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<node pkg="lawn_tractor_navigation" type="follow_gps_waypoints" name="follow_gps_waypoints" output="screen" />
+		<param name="/outdoor_waypoint_nav/coordinates_file" value="/gps_points_file.txt" type="string" />
+			
+</launch>
