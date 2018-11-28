@@ -10,9 +10,9 @@ https://www.youtube.com/watch?v=-RF8hOKg6WU
 git clone https://github.com/ros-agriculture/ros_lawn_tractor.git 
 git clone https://github.com/bsb808/geonav_transform.git
 
+prompt$ cd catkin_ws
 prompt$ rosdep update
 prompt$ rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO}
-prompt$ cd catkin_ws
 prompt/catkin_ws$ catkin build
 prompt/catkin_ws$ source devel/setup.bash
 prompt/catkin_ws$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
