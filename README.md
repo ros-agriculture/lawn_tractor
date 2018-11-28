@@ -6,6 +6,7 @@ Software for self driving lawn tractor.
 https://www.youtube.com/watch?v=-RF8hOKg6WU
 
 # Install
+<pre>
 git clone https://github.com/ros-agriculture/ros_lawn_tractor.git 
 git clone https://github.com/bsb808/geonav_transform.git
 
@@ -15,23 +16,36 @@ prompt$ cd catkin_ws
 prompt/catkin_ws$ catkin build
 prompt/catkin_ws$ source devel/setup.bash
 prompt/catkin_ws$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
+</pre>
 
 # Docker
-Install Docker
+Install Docker <br />
 If you use Ubuntu Trusty, Wily, or Xenial, install the linux-image-extra kernel package:
 
-prompt$ sudo apt-get update -y && sudo apt-get install -y linux-image-extra-$(uname -r
+<pre>
+prompt$ sudo apt-get update -y && sudo apt-get install -y linux-image-extra-$(uname -r)
+</pre>
 
-Install Docker: 
+Install Docker:
+<pre>
 prompt$ sudo apt-get install docker-engine -y
-Start Docker: 
+</pre>
+Start Docker:
+<pre>
 prompt$ sudo service docker start
+</pre>
 Verify Docker:
+<pre>
 prompt$ sudo docker run hello-world
+</pre>
 
 Download Start File
+<pre>
 prompt$ wget https://github.com/ros-agriculture/ros_lawn_tractor/blob/master/docker/start.sh
 prompt$ chmod +x start.sh
 prompt$ ./start.sh
+</pre>
 ..... wait for image to download ......
+<pre>
 docker/prompt$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
+</pre>
