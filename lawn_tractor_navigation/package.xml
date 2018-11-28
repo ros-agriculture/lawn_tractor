@@ -18,6 +18,8 @@
   <build_depend>cmake_modules</build_depend>
   <build_depend>teb_local_planner</build_depend>
   <build_depend>global_planner</build_depend>
+  <build_depend>move_base</build_depend>
+  <build_depend>move_base_msgs</build_depend>
   <exec_depend>teb_local_planner</exec_depend>
   <exec_depend>global_planner</exec_depend>
   <exec_depend>nav_core</exec_depend>
@@ -25,6 +27,8 @@
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>move_base</exec_depend>
+  <exec_depend>move_base_msgs</exec_depend>
+  
   <exec_depend>map_server</exec_depend>
 
 
