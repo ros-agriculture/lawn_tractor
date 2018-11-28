@@ -5,6 +5,8 @@ set(CMAKE_CXX_FLAGS "-std=c++11")
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 11)
 
+find_package(PkgConfig)
+pkg_search_module(Eigen3 REQUIRED eigen3)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
