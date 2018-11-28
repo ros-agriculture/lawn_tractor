@@ -20,8 +20,6 @@ roslaunch_add_file_check(launch)
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
-add_executable(follow_gps_waypoints src/follow_gps_waypoints.cpp)
-target_link_libraries(follow_gps_waypoints ${catkin_LIBRARIES})
 
 install(DIRECTORY  launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
