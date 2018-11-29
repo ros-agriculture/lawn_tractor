@@ -7,18 +7,19 @@ https://www.youtube.com/watch?v=-RF8hOKg6WU
 
 # Install
 <pre>
-git clone https://github.com/ros-agriculture/ros_lawn_tractor.git 
-git clone https://github.com/bsb808/geonav_transform.git
 
 prompt$ cd catkin_ws
-prompt$ rosdep update
-prompt$ rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO}
+prompt/catkin_ws$ git clone https://github.com/ros-agriculture/ros_lawn_tractor.git 
+prompt/catkin_ws$ git clone https://github.com/bsb808/geonav_transform.git
+prompt/catkin_ws$ rosdep update
+prompt/catkin_ws$ rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO}
 prompt/catkin_ws$ catkin build
 prompt/catkin_ws$ source devel/setup.bash
 prompt/catkin_ws$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 </pre>
 
 # Docker
+If you have docker installed skip to the start file.
 Install Docker <br />
 If you use Ubuntu Trusty, Wily, or Xenial, install the linux-image-extra kernel package:
 
