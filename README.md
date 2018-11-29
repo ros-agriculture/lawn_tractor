@@ -30,7 +30,7 @@ prompt$ sudo apt-get update -y && sudo apt-get install -y linux-image-extra-$(un
 
 Install Docker:
 <pre>
-prompt$ sudo apt-get install docker-engine -y
+prompt$ sudo apt-get install docker-ce -y
 </pre>
 Start Docker:
 <pre>
