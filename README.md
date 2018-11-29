@@ -11,7 +11,7 @@ https://www.youtube.com/watch?v=-RF8hOKg6WU
 prompt$ cd catkin_ws/src
 prompt/catkin_ws/src$ git clone https://github.com/ros-agriculture/ros_lawn_tractor.git 
 prompt/catkin_ws/src$ git clone https://github.com/bsb808/geonav_transform.git
-prompt$ cd ..
+prompt/catkin_ws/src$ cd ..
 prompt/catkin_ws$ rosdep update
 prompt/catkin_ws$ rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO}
 prompt/catkin_ws$ catkin build
