@@ -20,7 +20,7 @@ prompt/catkin_ws$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 </pre>
 
 # Docker
-If you have docker installed skip to the start file.<br />
+If you have docker installed skip to Download Start File.<br />
 Install Docker <br />
 https://docs.docker.com/install/linux/docker-ce/ubuntu/ <br />
 If you use Ubuntu Trusty, Wily, or Xenial, install the linux-image-extra kernel package:
