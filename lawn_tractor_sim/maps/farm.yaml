@@ -1,7 +1,14 @@
-image: field.png
-resolution: 0.1
-origin: [-10.0, -10.0, 0.0]
+#changes by sam
+
+#image: field.png
+image: ros_farm_v01.png
+
+#resolution: 0.1
+resolution: .1
+
+#origin: [-10.0, -10.0, 0.0]
+origin: [-30.0, -30.0, 0.0]
+
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196
-

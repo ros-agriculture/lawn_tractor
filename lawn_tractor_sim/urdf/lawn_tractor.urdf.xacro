@@ -1,39 +1,79 @@
 <?xml version="1.0"?>
-<robot name="lawn_tractor">
-  <link name="base_link" />
-  <link name="base_footprint" />
-  <link name="chassis">
+<robot name="lawn_tractor" xmlns:xacro='http://www.ros.org/wiki/xacro'>
+
+<!-- TODO:  collision link element to be added -->
+<!-- TODO:  inertial link element to be added -->
+
+<!-- define base link, center of rear axle for an ackermann vehicle -->
+  <link name="base_link">
     <visual>
-      <origin xyz=".05 0 0" rpy="0 0 3.14159266" scale="1 1 1"/>
+      <origin xyz='0.55 0 0' rpy='0 0 ${pi}' />
       <geometry>
-        <mesh filename="package://lawn_tractor_sim/meshes/lawn_tractor.dae"/>
+        <mesh filename="package://lawn_tractor_sim/meshes/lawn_tractor.dae" scale='1 1 1'/>
       </geometry>
     </visual>
   </link>
-  <link name="gps" />
-  <link name="camera" />
 
-  <joint name="base_footprint" type="fixed">
-    <parent link="base_link"/>
-    <child link="base_footprint"/>
-    <origin xyz="0 0 0.05" rpy="0 0 0" />
+<!-- define base footprint (virtual link) -->
+  <link name="base_footprint" />
+
+
+  <!-- define gps link -->
+  <link name="gps">
+    <visual>
+      <origin xyz='0 0 0' rpy='0 0 0' />
+      <geometry>
+        <sphere radius='0.05' />
+      </geometry>
+      <material name='red'>
+        <color rgba='1 0 0 0.5' />
+      </material>
+    </visual>
+  </link>
+
+  <!-- define camera link -->
+  <link name="camera">
+    <visual>
+      <origin xyz='0 0 0' rpy='0 0 0' />
+      <geometry>
+        <sphere radius='0.05' />
+      </geometry>
+      <material name='red'>
+        <color rgba='1 0 0 0.5' />
+      </material>
+    </visual>
+  </link>
+
+    <!-- xacro macro definition -->
+    <!-- default inertia -->
+    <xacro:macro name='default_inertia' params='mass x:=0 y:=0 z:=0'>
+        <inertial>
+            <origin xyz='${x} ${y} ${z}' />
+            <mass value='${mass}' />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+        </inertial>
+    </xacro:macro>
+
+
+
+<!-- define base footprint joint -->
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.25" rpy="0 0 0" />
   </joint>
 
-  <joint name="chassis" type="fixed">
-    <parent link="base_link"/>
-    <child link="chassis"/>
-    <origin xyz="0 0 0.05" rpy="0 0 0" />
-  </joint>
-
-  <joint name="gps" type="fixed">
+<!-- define gps joint -->
+  <joint name="gps_joint" type="fixed">
     <parent link="base_link"/>
     <child link="gps"/>
-    <origin xyz="1 0 0" rpy="0 0 0" />
+    <origin xyz="1.25 0 1.0" rpy="0 0 0" />
   </joint>
 
-  <joint name="camera" type="fixed">
+<!-- define camera joint -->
+  <joint name="camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="camera"/>
-    <origin xyz="1 1 0" rpy="0 0 00" />
+    <origin xyz="1.5 0 0.5" rpy="${-pi/2} 0 ${-pi/2}" />
   </joint>
 </robot>
