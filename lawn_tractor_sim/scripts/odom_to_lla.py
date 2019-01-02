@@ -14,11 +14,12 @@ def callback(data):
     olon = -96.512199
 
     # Odom to lat/lon
-    xg2, yg2 = gc.xy2ll(data.pose.pose.position.x,data.pose.pose.position.y,olat,olon)
+    xg2, yg2 = gc.xy2ll(data.pose.pose.position.x,
+                        data.pose.pose.position.y, olat, olon)
 
     # build navsat message
     fake_gps = NavSatFix()
-    fake_gps.header.frame_id = rospy.get_param('~frame_id','map')
+    fake_gps.header.frame_id = rospy.get_param('~frame_id', 'gps')
     fake_gps.header.stamp = rospy.Time.now()
     fake_gps.status.status = 1
     fake_gps.status.service = 1
@@ -31,11 +32,11 @@ def callback(data):
     pub.publish(fake_gps)
 
     # Odom to UTM
-    utmy, utmx, utmzone = gc.LLtoUTM(xg2,yg2)
+    utmy, utmx, utmzone = gc.LLtoUTM(xg2, yg2)
 
     # build navsat message
     fake_UTM = NavSatFix()
-    fake_UTM.header.frame_id = rospy.get_param('~frame_id','map')
+    fake_UTM.header.frame_id = rospy.get_param('~frame_id', 'utm')
     fake_UTM.header.stamp = rospy.Time.now()
     fake_UTM.status.status = 1
     fake_UTM.status.service = 1
@@ -55,6 +56,7 @@ def odom2lla():
     rospy.Subscriber("odom", Odometry, callback)
 
     rospy.spin()
+
 
 if __name__ == '__main__':
     try:
