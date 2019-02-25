@@ -6,6 +6,8 @@ Software for self driving lawn tractor.
 https://www.youtube.com/watch?v=-RF8hOKg6WU
 
 ## Install
+If you don't have a Ubuntu computer running ROS.  This script https://github.com/linorobot/rosme provided by LinoRobot (https://linorobot.org/) will install ROS for you.
+
 <pre>
 
 prompt$ cd catkin_ws/src
