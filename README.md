@@ -14,6 +14,7 @@ prompt/catkin_ws/src$ git clone https://github.com/bsb808/geonav_transform.git
 prompt/catkin_ws/src$ cd ..
 prompt/catkin_ws$ rosdep update
 prompt/catkin_ws$ rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO}
+prompt/catkin_ws$ sudo apt-get install python-catkin-tools
 prompt/catkin_ws$ catkin build
 prompt/catkin_ws$ source devel/setup.bash
 prompt/catkin_ws$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
