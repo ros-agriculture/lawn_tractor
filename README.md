@@ -29,7 +29,7 @@ Docker install instructions - https://docs.docker.com/install/ <br />
 
 Download Start File
 <pre>
-prompt$ wget https://github.com/ros-agriculture/ros_lawn_tractor/blob/master/docker/start.sh
+prompt$ wget https://raw.githubusercontent.com/ros-agriculture/ros_lawn_tractor/master/docker/start.sh
 prompt$ chmod +x start.sh
 prompt$ ./start.sh
 </pre>
