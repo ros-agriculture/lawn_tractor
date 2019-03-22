@@ -19,7 +19,7 @@ prompt/catkin_ws$ rosdep install -y --from-paths . --ignore-src --rosdistro ${RO
 prompt/catkin_ws$ sudo apt-get install python-catkin-tools
 prompt/catkin_ws$ catkin build
 prompt/catkin_ws$ source devel/setup.bash
-#Add new catkin buid source to your startup script.
+#Add new catkin build source to your startup script.
 prompt/catkin_ws$ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 prompt/catkin_ws$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 </pre>
