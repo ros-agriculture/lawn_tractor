@@ -44,6 +44,19 @@
     </visual>
   </link>
 
+  <!-- define ultrasonic sensor link -->
+  <link name="base_laser_link">
+    <visual>
+      <origin xyz='0 0 0' rpy='0 0 0' />
+      <geometry>
+        <sphere radius='0.05' />
+      </geometry>
+      <material name='red'>
+        <color rgba='1 0 0 0.5' />
+      </material>
+    </visual>
+  </link>
+
     <!-- xacro macro definition -->
     <!-- default inertia -->
     <xacro:macro name='default_inertia' params='mass x:=0 y:=0 z:=0'>
@@ -75,5 +88,12 @@
     <parent link="base_link"/>
     <child link="camera"/>
     <origin xyz="1.5 0 0.5" rpy="${-pi/2} 0 ${-pi/2}" />
+  </joint>
+
+  <!-- define ultrasonic sensor joint -->
+  <joint name="range_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_laser_link"/>
+    <origin xyz="1.5 0 0.75" rpy="0 0 0" />
   </joint>
 </robot>
