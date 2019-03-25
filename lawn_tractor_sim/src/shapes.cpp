@@ -20,7 +20,7 @@ int main( int argc, char** argv )
 
     // Set the namespace and id for this marker.  This serves to create a unique ID
     // Any marker sent with the same namespace and id will overwrite the old one
-    marker.ns = "obsticals";
+    marker.ns = "obstacles";
     marker.id = 0;
 
     // Set the marker type.  
