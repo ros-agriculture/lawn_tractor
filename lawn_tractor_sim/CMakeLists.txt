@@ -10,6 +10,7 @@ project(lawn_tractor_sim)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
+  visualization_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -108,6 +109,8 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
+
+
 ###########
 ## Build ##
 ###########
@@ -196,3 +199,8 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+
+add_executable(shapes src/shapes.cpp)
+target_link_libraries(shapes ${catkin_LIBRARIES})
