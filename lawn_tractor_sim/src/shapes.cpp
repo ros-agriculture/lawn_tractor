@@ -9,7 +9,7 @@ int main( int argc, char** argv )
   ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
   // Set our initial shape type to be a cube
-  uint32_t shape = visualization_msgs::Marker::CUBE;
+  unsigned int shape = visualization_msgs::Marker::CUBE;
 
   while (ros::ok())
   {
