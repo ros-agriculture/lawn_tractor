@@ -5,7 +5,11 @@ Software for self driving lawn tractor.
 
 https://www.youtube.com/watch?v=-RF8hOKg6WU
 
-## Install
+## Cloud Based Simulation
+Tutorial on running the lawn tractor simulator: https://www.loom.com/share/c9868920819a466d827d522a2aa76c8e  
+ROSJect file with simulator already loaded:  http://www.rosject.io/l/8e95478/
+
+## Local Install
 If you don't have a Ubuntu 16.04 computer running ROS Kinetic.  This script https://github.com/linorobot/rosme provided by LinoRobot (https://linorobot.org/) will install ROS for you.
 
 This simulator runs on Ubuntu 16.04 and ROS Kinetic.
