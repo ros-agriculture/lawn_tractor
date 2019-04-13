@@ -10,7 +10,7 @@ RUN mkdir -p $CATKIN_WS/src
 WORKDIR $CATKIN_WS/src
 
 # download lawn_tractor_sim source 
-RUN git clone -b 'v0.2-alpha' --single-branch --depth 1 https://github.com/ros-agriculture/ros_lawn_tractor.git 
+RUN git clone -b 'v0.3-alpha' --single-branch --depth 1 https://github.com/ros-agriculture/ros_lawn_tractor.git 
 RUN git clone https://github.com/bsb808/geonav_transform.git
 RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 RUN echo "source $CATKIN_WS/devel/setup.bash" >> ~/.bashrc
