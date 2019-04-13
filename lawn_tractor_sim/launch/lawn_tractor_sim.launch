@@ -59,7 +59,7 @@
 
 <!-- ****** RVIZ ***** -->
 <node name="tractor_viz" pkg="rviz" type="rviz" output="screen"
-     args="$(find lawn_tractor_sim)/rviz/tractor_viz.rviz">
+     args="-d $(find lawn_tractor_sim)/rviz/tractor_viz.rviz">
 </node>
 
 <!-- ****** Markers ***** -->
