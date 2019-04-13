@@ -8,11 +8,6 @@ https://www.youtube.com/watch?v=-RF8hOKg6WU
 ## How to use the simulator?
 Simulator uses ROS Navigation and TEB Planner: https://youtu.be/JuZ8gpx9oO4
 
-## What if I don't see a tractor in RVIZ?
-When rviz starts it doesn't load the rviz config file.  You will need to go to File and load sim config file.
-Sometimes when you press the File tab it just shows black.  You will need to stop rviz and relaunch the sim:
-https://youtu.be/yF0pPZHdhtI   There is an open issue if you know the fix...
-
 ## Cloud Based Simulation
 Tutorial on running the lawn tractor simulator: https://www.loom.com/share/c9868920819a466d827d522a2aa76c8e  
 ROSJect file with simulator already loaded:  http://www.rosject.io/l/8e95478/
@@ -53,11 +48,6 @@ prompt$ ./start.sh
 <pre>
 docker/prompt$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 </pre>
-
-When rviz starts it doesn't load the rviz config file.  You will need to go to File and load sim config file.
-Sometimes when you press the File tab it just shows black.  You will need to stop rviz and relaunch the sim:
-https://youtu.be/yF0pPZHdhtI
-
 
 
 
