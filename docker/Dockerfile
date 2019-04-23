@@ -22,9 +22,6 @@ RUN apt-get -qq update && \
         git-core \
         bash-completion \
         wget && \
-    rosdep update && \
-    rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} --as-root=apt:false && \
-    apt-get -qq upgrade && \
     rm -rf /var/lib/apt/lists/*
 
 # HACK, replacing shell with bash for later docker build commands
@@ -37,6 +34,10 @@ RUN git clone https://github.com/bsb808/geonav_transform.git
 
 RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 RUN echo "source $CATKIN_WS/devel/setup.bash" >> ~/.bashrc
+
+RUN rosdep update && \
+    rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} --as-root=apt:false && \
+    apt-get -qq upgrade
 
 # build repo
 WORKDIR $CATKIN_WS
