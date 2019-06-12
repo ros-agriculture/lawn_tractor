@@ -53,8 +53,6 @@ docker/prompt$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 
 <br /><br />
 <br /><br />
-<br /><br />
-<br /><br />
 
 ## Licensing
 ros_lawn_tractor is released under the MIT license. 
