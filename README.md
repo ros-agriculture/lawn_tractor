@@ -35,10 +35,12 @@ prompt/catkin_ws$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 
 ## Docker
 If you have docker installed skip to Download Start File.<br />
-Install Docker <br />
+<br />
+**Install Docker** <br />
 Docker install instructions - https://docs.docker.com/install/ <br />
+<br />
 
-Download Start File
+**Download Start File**<br />
 <pre>
 prompt$ wget https://raw.githubusercontent.com/ros-agriculture/ros_lawn_tractor/master/docker/start.sh
 prompt$ chmod +x start.sh
@@ -49,7 +51,10 @@ prompt$ ./start.sh
 docker/prompt$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 </pre>
 
-
+<br /><br />
+<br /><br />
+<br /><br />
+<br /><br />
 
 ## Licensing
 ros_lawn_tractor is released under the MIT license. 
