@@ -1,7 +1,7 @@
 # ros_lawn_tractor
 Software for self driving lawn tractor.
 
-![alt text](https://github.com/ros-agriculture/ros_lawn_tractor/blob/master/lawn_tractor.png)
+![alt text](https://github.com/ros-agriculture/ros_lawn_tractor/blob/master/ros_lawn_tractor.png)
 
 https://youtu.be/MUbRY6LcDrI
 
