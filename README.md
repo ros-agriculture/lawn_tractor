@@ -3,7 +3,7 @@ Software for self driving lawn tractor.
 
 ![alt text](https://github.com/ros-agriculture/ros_lawn_tractor/blob/master/lawn_tractor.png)
 
-https://www.youtube.com/watch?v=-RF8hOKg6WU
+https://youtu.be/MUbRY6LcDrI
 
 ## How to use the simulator?
 Simulator uses ROS Navigation and TEB Planner: https://youtu.be/JuZ8gpx9oO4
