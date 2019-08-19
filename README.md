@@ -17,8 +17,7 @@ If you don't have a Ubuntu 16.04 computer running ROS Kinetic.  This script http
 
 This simulator runs on Ubuntu 16.04 and ROS Kinetic.
 
-<pre>
-
+```
 prompt$ cd catkin_ws/src
 prompt/catkin_ws/src$ git clone https://github.com/ros-agriculture/ros_lawn_tractor.git 
 prompt/catkin_ws/src$ git clone https://github.com/bsb808/geonav_transform.git
@@ -31,28 +30,22 @@ prompt/catkin_ws$ source devel/setup.bash
 #Add new catkin build source to your startup script.
 prompt/catkin_ws$ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 prompt/catkin_ws$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
-</pre>
+```
+## Docker Install
+If you have docker installed skip to Download Start File.
+**Install Docker**
+Docker install instructions - https://docs.docker.com/install/
 
-## Docker
-If you have docker installed skip to Download Start File.<br />
-<br />
-**Install Docker** <br />
-Docker install instructions - https://docs.docker.com/install/ <br />
-<br />
-
-**Download Start File**<br />
-<pre>
+**Download Start File**
+```
 prompt$ wget https://raw.githubusercontent.com/ros-agriculture/ros_lawn_tractor/master/docker/start.sh
 prompt$ chmod +x start.sh
 prompt$ ./start.sh
-</pre>
+```
 ..... wait for image to download ......
-<pre>
+```
 docker/prompt$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 </pre>
-
-<br /><br />
-<br /><br />
 
 ## Licensing
 ros_lawn_tractor is released under the MIT license. 
