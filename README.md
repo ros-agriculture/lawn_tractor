@@ -13,24 +13,61 @@ Tutorial on running the lawn tractor simulator: https://www.loom.com/share/c9868
 ROSJect file with simulator already loaded:  http://www.rosject.io/l/8e95478/
 
 ## Local Install
-If you don't have a Ubuntu 16.04 computer running ROS Kinetic.  This script https://github.com/linorobot/rosme provided by LinoRobot (https://linorobot.org/) will install ROS for you.
+If you don't have a Ubuntu 16.04 computer running ROS Kinetic.  [This script] (https://github.com/linorobot/rosme) provided by [LinoRobot] (https://linorobot.org/) will install ROS for you.
 
 This simulator runs on Ubuntu 16.04 and ROS Kinetic.
 
 ```
 prompt$ cd catkin_ws/src
+```
+
+```
 prompt/catkin_ws/src$ git clone https://github.com/ros-agriculture/ros_lawn_tractor.git 
+```
+
+```
 prompt/catkin_ws/src$ git clone https://github.com/bsb808/geonav_transform.git
+```
+
+```
 prompt/catkin_ws/src$ cd ..
+
+```
+
+```
 prompt/catkin_ws$ rosdep update
+
+```
+
+```
 prompt/catkin_ws$ rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO}
+
+```
+
+```
 prompt/catkin_ws$ sudo apt-get install python-catkin-tools
+
+```
+
+```
 prompt/catkin_ws$ catkin build
+
+```
+
+```
 prompt/catkin_ws$ source devel/setup.bash
+```
+
+```
 #Add new catkin build source to your startup script.
 prompt/catkin_ws$ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
+```
+```
 prompt/catkin_ws$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 ```
+
+
 ## Docker Install
 If you have docker installed skip to Download Start File.
 **Install Docker**
@@ -45,8 +82,7 @@ prompt$ ./start.sh
 ..... wait for image to download ......
 ```
 docker/prompt$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
-</pre>
-
+```
 ## Licensing
 ros_lawn_tractor is released under the MIT license. 
 
