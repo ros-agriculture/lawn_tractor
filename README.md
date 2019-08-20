@@ -87,7 +87,10 @@ prompt$ ./start.sh
 ```
 docker/prompt$ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 ```
-## Licensing
+## Join us.
+This is an open project and you are invited to work in it with the team. Present yourself on one of the following platforms: [the SLACK group](http://rosagriculture.slack.com/), [the facebook page](https://facebook.com/ROSAgriculture), [twitt us](https://twitter.com/ROSAgriculture) or [a Whatsapp](https://wa.me/+12142933679) to the coordinator.
+
+## Licensing.
 ros_lawn_tractor is released under the MIT license.
 
 Any user of this software shall indemnify and hold harmless ROS Agriculture O&Uuml;. and its directors, officers, employees, agents, stockholders, affiliates, subcontractors and customers from and against all allegations, claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, costs and expenses (including without limitation attorneys’ fees and costs) which arise out of, relate to or result from any use of this software by user.
