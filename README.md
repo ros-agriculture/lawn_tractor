@@ -1,5 +1,7 @@
-# ros_lawn_tractor
-Software for self driving lawn tractor.
+# ROS Lawn Tractor
+
+This repository aims to compile the work and software for self driving a lawn tractor, it's our first community project and was suggested by a rancher in Texas, Al Jones. As an example of implementation we have automated a small lawn tractor, using low-cost open source components to learn the principles of robotics.  The widely available lawn tractor platform with many attachments and open source approach reduces the barrier of entry of using robotics in agriculture. 
+
 
 ![Foto Matt](https://lh3.googleusercontent.com/fTaDVuOLLdnxALxxXZmdqxHzTtC0EKzNXzy3jcWOWNoNlAX-m1M9URiD9IABtjC8Se8V4jBieDTCXtoDVbzQBO0D88ygz5vbCTbUdQbwyRxgyai9iPZPSZQLVdbvPU0uiYLkNv0FSi2fQMzmgIwPZWIWe7Vzuwb3TllN16e9ZSV7SDvLe-l3H1xDfc5wzULhObR3kFBgxlkZVWMzIT_DkWyBIHNnBDrEaFNuyiaAT5c1iJ5WjzdCYbOXhXEYVZTiz1jRwTlDoaIwbIT0xw4zAzEv1z19rshk7V4rs5nPqCsWYhy8znP8vQNAeLdwcnZbkF6GSjjN7kk3La_IxX-FckfNwMPM_dNeW2K3OaQ1RCQo6m0DpSBzG3cVcMoCmRIThZei3CoxFbJOF-mp5cToEpJrO0gd9pFaTSrJRL-oJsHd5E0gfvEt9nVmkVkjwBoXcwvg80NQi-DTuFjvi2-DVAeS_N_oP-boCSa1NB1X0s1QkRqcUDn2UUsOUXw8OCu_sKr2dm_pG1y-6yZF_jbWl3-DF0DvwGwUwfCFcYTXFxXG_YCZ-HIP0SlwzhVnGPtDRcwrIYujg7ocHkrBR10Gmwpqk1yyDY4X1HKKAG-TWE5yXCENIO4CARVqA8vrIHD10cY-YKlrbZXxiMwCuf1hMVsGUjeVD-xcxogLQzlM0c6QkQH3ggvTB283_OxDF4-VNglSSafwSmN8Qt1ustLoKOHvwg=w860-h645-no)
 
