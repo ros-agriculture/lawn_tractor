@@ -15,7 +15,7 @@ Docker install instructions - https://docs.docker.com/install/
 $ wget https://raw.githubusercontent.com/ros-agriculture/ros_lawn_tractor/master/docker/start.sh
 ```
 ```
-$ chmod +x start.sh
+$ sudo chmod +x start.sh
 ```
 ```
 $ ./start.sh
