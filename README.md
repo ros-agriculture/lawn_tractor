@@ -7,9 +7,7 @@ This repository aims to compile the work and software for self driving a lawn tr
 
 
 From this community initiative we obtained the following products and tools:
-* **[ROS Lawn Tractor Simulator](simulator.md).** An RVIZ implementation, that is a great training tool for learning ROS in an agricultural environment and with ROS lawn tractor. At ROS Lawn Tractor Simulator page you will find all the imformation.
-[//]: * **[ROS Lawn Tractor Suite](ros_lawn_tractor_Suite.md).** A set of tool to buil your own ROS lawn tractor.
-[//]: * **[ROS Lawn Tractor scripts](ROS_Lawn_Tractor_scripts.md).** A set of scripts for **ROS Lawn Tractor Simulator** and [//]: **ROS Lawn Tractor Suite**.
+* **[ROS Lawn Tractor Simulator](simulator.md).** A stage_ros implementation, that is a great training tool for learning ROS in an agricultural environment and with ROS lawn tractor. At ROS Lawn Tractor Simulator page you will find all the imformation.
 
 
 ## Join us.
