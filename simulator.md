@@ -1,5 +1,5 @@
 # Simulator
-The objective of the simulator is that you can practice ROS in an appropriate environment and acquire the necessary skills to evolve into the physical product. There are several ways to implement it. Possibly the simplest is to use the docker creadi container for that purpose, although it may be demanding of recourse and that is why there are also other possibilities.
+The objective of the simulator is that you can practice ROS in an appropriate environment and acquire the necessary skills to evolve into the physical product. There are several ways to implement it. Possibly the simplest is to use the docker created container for that purpose, although it may be resource demanding, so you may want to use the other options.
 
 
 ## Docker
@@ -20,11 +20,13 @@ $ sudo chmod +x start.sh
 ```
 $ ./start.sh
 ```
-The first time it will download the docker conteiner to your machine, depending on your connection this may take a while. In the following occasions this will not happen. After that initial download, the container will automatically start and you will access the simulator container terminal. To load the simulator itself, you must execute:
+The first time it will download the docker container to your machine, depending on your connection this may take a while. In the following occasions this will not happen. After that initial download, the container will automatically start and you will access the simulator container terminal. To load the simulator itself, you must execute:
 ```
 $ roslaunch lawn_tractor_sim lawn_tractor_sim.launch
 ```
-It would be appropriate to read about how to handle docker if you do not have experience.
+If you are unfamiliar with Docker, it is suggested you learn the basics from a source such as - https://docker-curriculum.com
+
+To use the docker instance in the future please check out the wiki: https://github.com/ros-agriculture/tractor_sim/wiki
 
 ## Cloud Based Simulation
 [Here](https://www.loom.com/share/c9868920819a466d827d522a2aa76c8e) you vill find a tutorial on running the lawn tractor simulator.
