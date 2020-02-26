@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   roslib
   roslaunch
+  base_local_planner
 )
 
 catkin_package()

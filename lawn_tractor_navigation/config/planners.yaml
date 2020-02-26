@@ -1,0 +1,13 @@
+planners:
+  - name: 'GlobalPlanner'
+    type: 'global_planner/GlobalPlanner'
+planner_patience: 5.0
+planner_frequency: 1.0
+GlobalPlanner:
+  allow_unknown: false
+  default_tolerance: 0.0
+  visualize_potential: true
+  use_dijkstra: true
+  use_quadratic: false
+  use_grid_path: false
+  old_navfn_behaviour: false

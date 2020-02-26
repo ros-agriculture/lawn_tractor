@@ -24,7 +24,7 @@
 
 
 <!-- ************** Navigation *************** -->
-<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+<!-- <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
 	<rosparam file="$(find lawn_tractor_navigation)/config/costmap_common_params.yaml"
 		command="load" ns="global_costmap"/>
 	<rosparam file="$(find lawn_tractor_navigation)/config/costmap_common_params.yaml"
@@ -43,7 +43,21 @@
 	<param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
 	<param name="controller_frequency" value="5.0" />
 	<param name="controller_patience" value="15.0" />
-</node>
+</node> -->
+  <node pkg="mbf_costmap_nav" type="mbf_costmap_nav" respawn="false" name="move_base_flex" output="screen">
+    <param name="tf_timeout" value="1.5"/>
+    <param name="planner_max_retries" value="3"/>
+    <rosparam file="$(find lawn_tractor_navigation)/config/planners.yaml" command="load" />
+    <rosparam file="$(find lawn_tractor_navigation)/config/controllers.yaml" command="load" />
+    <rosparam file="$(find lawn_tractor_navigation)/config/recovery_behaviors.yaml" command="load" />
+    <rosparam file="$(find lawn_tractor_navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+    <rosparam file="$(find lawn_tractor_navigation)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find lawn_tractor_navigation)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find lawn_tractor_navigation)/config/local_costmap_params.yaml" command="load" />
+  	<rosparam file="$(find lawn_tractor_navigation)/config/teb_local_planner_params_carlike.yaml"
+		 command="load" />
+  </node>
+  <node pkg="lawn_tractor_navigation" name="mbf_state_machine" type="mbf_state_machine.py" respawn="false" output="screen"/>
 
 
 <!-- ****** Maps ***** -->
