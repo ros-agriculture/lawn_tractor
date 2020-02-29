@@ -7,7 +7,7 @@ Follow this steps for getting your docker container working.
 #### Install Docker
 If you have docker installed skip to Download Start File.
 **Install Docker**
-Docker install instructions - https://docs.docker.com/install/
+$ sudo curl -sSL https://get.docker.com | sudo sh
 
 #### **Get Start File**
 
