@@ -18,9 +18,14 @@
   <build_depend>mbf_costmap_core</build_depend>
   <build_depend>cmake_modules</build_depend>
   <build_depend>teb_local_planner</build_depend>
+  <build_depend>smach</build_depend>
+  <build_depend>smach_ros</build_depend>
   <build_depend>global_planner</build_depend>
   <build_depend>move_base</build_depend>
   <build_depend>move_base_msgs</build_depend>
+  <build_depend>mbf_abstract_nav</build_depend>
+  <build_depend>mbf_abstract_core</build_depend>
+  <build_depend>mbf_msgs</build_depend>
   <exec_depend>teb_local_planner</exec_depend>
   <exec_depend>mbf_costmap_core</exec_depend>
   <exec_depend>global_planner</exec_depend>
@@ -40,8 +45,6 @@
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
-    <mbf_costmap_core plugin="${prefix}/mbf_plugin.xml" />  
     <!-- Other tools can request additional information be placed here -->
-
   </export>
 </package>
