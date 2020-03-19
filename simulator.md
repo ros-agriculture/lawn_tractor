@@ -46,7 +46,11 @@ prompt/catkin_ws/src$ git clone https://github.com/ros-agriculture/ros_lawn_trac
 ```
 
 ```
-prompt/catkin_ws/src$ git clone https://github.com/bsb808/geonav_transform.git
+prompt/catkin_ws/src$ git clone https://github.com/ros-agriculture/geonav_transform.git
+```
+
+```
+prompt/catkin_ws/src$ git clone https://github.com/ros-agriculture/path_planner
 ```
 
 ```
