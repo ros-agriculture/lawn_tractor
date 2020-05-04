@@ -1,4 +1,4 @@
-# ROS Lawn Tractor
+# Lawn Tractor
 
 This repository aims to compile the work and software for self driving a lawn tractor, it's our first community project and was suggested by a rancher in Texas, Al Jones. As an example of implementation we have automated a small lawn tractor, using low-cost open source components to learn the principles of robotics.  The widely available lawn tractor platform with many attachments and open source approach reduces the barrier of entry of using robotics in agriculture.
 
@@ -7,14 +7,14 @@ This repository aims to compile the work and software for self driving a lawn tr
 
 
 From this community initiative we obtained the following products and tools:
-* **[ROS Lawn Tractor Simulator](simulator.md).** A [stage_ros](http://wiki.ros.org/stage_ros) implementation, that is a great training tool for learning ROS in an agricultural environment and with ROS lawn tractor. At ROS Lawn Tractor Simulator page you will find all the imformation.
+* **[Lawn Tractor Simulator](simulator.md).** A [stage_ros](http://wiki.ros.org/stage_ros) implementation, that is a great training tool for learning ROS in an agricultural environment and with lawn tractor. At the Lawn Tractor Simulator page you will find all the imformation.
 
 
 ## Join us.
 This is an open project and you are invited to work in it with the team. Present yourself on one of the following platforms: [the SLACK group](http://rosagriculture.slack.com/), [the facebook page](https://facebook.com/ROSAgriculture), [twitt us](https://twitter.com/ROSAgriculture) or [a Whatsapp](https://wa.me/+12142933679) to the coordinator.
 
 ## Licensing.
-ros_lawn_tractor is released under the MIT license.
+lawn_tractor is released under the MIT license.
 
 Any user of this software shall indemnify and hold harmless ROS Agriculture O&Uuml;. and its directors, officers, employees, agents, stockholders, affiliates, subcontractors and customers from and against all allegations, claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, costs and expenses (including without limitation attorneys’ fees and costs) which arise out of, relate to or result from any use of this software by user.
 
