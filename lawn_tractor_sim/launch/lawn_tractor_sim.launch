@@ -37,8 +37,10 @@
   	<rosparam file="$(find lawn_tractor_navigation)/config/teb_local_planner_params_carlike.yaml"
 		 command="load" />
   </node>
-  <node pkg="lawn_tractor_navigation" name="mbf_state_machine" type="mbf_state_machine.py" respawn="false" output="screen"/>
 
+  <!--The below is the old SMACH based code, leaving commented code here temporarily-->
+  <!-- <node pkg="lawn_tractor_navigation" name="mbf_state_machine" type="mbf_state_machine.py" respawn="false" output="screen"/> -->
+  <node pkg="lawn_tractor_navigation" name="mbf_behavior_tree" type="movebaseflex_bt_node" respawn="false" output="screen" />
 
 <!-- ****** Maps ***** -->
 <node name="map_server" pkg="map_server" type="map_server"
