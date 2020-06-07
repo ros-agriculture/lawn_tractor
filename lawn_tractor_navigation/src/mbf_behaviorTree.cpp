@@ -1,4 +1,4 @@
-#include <movebaseflex_bt_node.h> 
+#include <mbf_behaviorTree.h> 
 // Define a client for to send goal requests to the move_base server through a SimpleActionClient
 //-------------------------------------------------------------
 // Simple Action to print a Goal Pose (PURE BT implementation)
@@ -80,7 +80,7 @@ BT::PortsList ExePathActionClient::providedPorts(){
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "movebaseflex_bt_node");
+  ros::init(argc, argv, "mbf_behaviorTree");
   ros::NodeHandle nh;
   std::string xml_file;
   std::string pkgpath = ros::package::getPath("lawn_tractor_navigation");

@@ -84,7 +84,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/mbf_bt_node.cpp)
-add_executable(movebaseflex_bt_node src/movebaseflex_bt_node.cpp)
+add_executable(movebaseflex_bt_node src/mbf_behaviorTree.cpp)
 add_dependencies(movebaseflex_bt_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(movebaseflex_bt_node ${catkin_LIBRARIES} )
 
