@@ -77,27 +77,18 @@ BT::PortsList ExePathActionClient::providedPorts(){
     BT::InputPort<mbf_msgs::GetPathResultConstPtr>("pathPtr") 
   };
 }
-//----------------------------------------------------------
-  // Simple tree, used to execute once each action.
-  static const char* xml_text = R"(
- <root >
-     <BehaviorTree>
-        <Sequence>
-            <Timeout msec="10000">
-                <WaitForGoal goal="{goal_pose}" />
-            </Timeout>
-            <GetPath server_name="move_base_flex/get_path" goalpose="{goal_pose}" result="{pathResultPtr}"/>
-            <ExePath server_name="move_base_flex/exe_path" pathPtr="{pathResultPtr}" />
-        </Sequence>
-     </BehaviorTree>
- </root>
- )";
 
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "movebaseflex_bt_node");
   ros::NodeHandle nh;
+  std::string xml_file;
+  std::string pkgpath = ros::package::getPath("lawn_tractor_navigation");
+  std::string filepathprefix = pkgpath + "/config/behavior_tree/";
+  nh.param<std::string>("xml_file", xml_file, "movebaseflex_tree.xml");
 
+  std::string completeFilepath = filepathprefix + xml_file;
+  
   BehaviorTreeFactory factory;
 
   NodeBuilder getPathActionClient_withNH = [&nh](const std::string& name,const NodeConfiguration& config){
@@ -107,7 +98,8 @@ int main(int argc, char **argv)
   factory.registerNodeType<WaitForGoal>("WaitForGoal");
   factory.registerBuilder<GetPathActionClient>("GetPath",getPathActionClient_withNH);
   factory.registerNodeType<ExePathActionClient>("ExePath");
-  auto tree = factory.createTreeFromText(xml_text);
+  auto tree = factory.createTreeFromFile(completeFilepath);
+
   NodeStatus status = NodeStatus::IDLE;
 
   PublisherZMQ publisher_zmq(tree);

@@ -4,6 +4,7 @@
 #include <behaviortree_cpp_v3/loggers/bt_zmq_publisher.h>
 #include <actionlib_tutorials/FibonacciAction.h>
 #include <ros/ros.h>
+#include <ros/package.h>
 
 #include <geometry_msgs/PoseStamped.h>
 #include <nav_msgs/Path.h>
