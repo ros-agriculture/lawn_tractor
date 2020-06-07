@@ -2,7 +2,6 @@
 #include <behaviortree_cpp_v3/action_node.h>
 #include <behaviortree_cpp_v3/bt_factory.h>
 #include <behaviortree_cpp_v3/loggers/bt_zmq_publisher.h>
-#include <actionlib_tutorials/FibonacciAction.h>
 #include <ros/ros.h>
 #include <ros/package.h>
 
@@ -29,13 +28,10 @@ private:
 class GetPathActionClient : public BT::SyncActionNode
 {
 public:
-    GetPathActionClient(const std::string& name, const BT::NodeConfiguration& config,ros::NodeHandle& nh): 
-    BT::SyncActionNode(name,config),node_(nh){}
+    GetPathActionClient(const std::string& name, const BT::NodeConfiguration& config): 
+    BT::SyncActionNode(name,config){}
     BT::NodeStatus tick() override;
     static BT::PortsList providedPorts();
-    using GetPath =  actionlib::SimpleActionClient<mbf_msgs::GetPathAction>;
-private:
-    ros::NodeHandle& node_;
 };
 
 class ExePathActionClient : public BT::SyncActionNode

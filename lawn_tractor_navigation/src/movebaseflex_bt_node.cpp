@@ -91,12 +91,8 @@ int main(int argc, char **argv)
   
   BehaviorTreeFactory factory;
 
-  NodeBuilder getPathActionClient_withNH = [&nh](const std::string& name,const NodeConfiguration& config){
-    return std::make_unique<GetPathActionClient>(name,config,nh);
-  };
-
   factory.registerNodeType<WaitForGoal>("WaitForGoal");
-  factory.registerBuilder<GetPathActionClient>("GetPath",getPathActionClient_withNH);
+  factory.registerNodeType<GetPathActionClient>("GetPath");
   factory.registerNodeType<ExePathActionClient>("ExePath");
   auto tree = factory.createTreeFromFile(completeFilepath);
 
