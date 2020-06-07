@@ -4,6 +4,7 @@
 // Simple Action to print a Goal Pose (PURE BT implementation)
 //-------------------------------------------------------------
 
+//Wait For Goal-------------------
 BT::NodeStatus WaitForGoal::tick() {
     geometry_msgs::PoseStamped goalpose;
     geometry_msgs::PoseStampedConstPtr msg = 
@@ -21,6 +22,7 @@ BT::PortsList WaitForGoal::providedPorts(){
   return {BT::OutputPort<geometry_msgs::PoseStamped>("goal")};
 }
 
+//Get Path-------------------
 BT::NodeStatus GetPathActionClient::tick() {
     actionlib::SimpleActionClient<mbf_msgs::GetPathAction> ac(getInput<std::string>("server_name").value(), true);
     ac.waitForServer(); //will wait for infinite time
@@ -60,6 +62,7 @@ BT::PortsList GetPathActionClient::providedPorts(){
   };
 }
 
+//Execute Path-------------------
 BT::NodeStatus ExePathActionClient::tick(){
   actionlib::SimpleActionClient<mbf_msgs::ExePathAction> ac(getInput<std::string>("server_name").value(), true);
   ac.waitForServer();
@@ -68,6 +71,25 @@ BT::NodeStatus ExePathActionClient::tick(){
   nav_msgs::Path path = pathPtr->path;
   goal.path = path;
   ac.sendGoal(goal);
+
+  bool finished_before_timeout = ac.waitForResult(ros::Duration(120.0)); //TODO: make this duration a rosparam / handle in the BT
+  if (finished_before_timeout)
+    {
+        actionlib::SimpleClientGoalState state = ac.getState();
+        switch(state.state_)
+        {
+          case actionlib::SimpleClientGoalState::SUCCEEDED:{
+            mbf_msgs::ExePathResultConstPtr exePathPtr = ac.getResult();
+            return NodeStatus::SUCCESS;
+            break;
+          }
+          default:
+            return NodeStatus::FAILURE;
+            break;
+        }
+    }
+  else
+      return NodeStatus::FAILURE; 
   return NodeStatus::SUCCESS;
 }
 
