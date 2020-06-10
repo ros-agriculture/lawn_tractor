@@ -42,3 +42,12 @@ class ExePathActionClient : public BT::SyncActionNode
         BT::NodeStatus tick() override;
         static BT::PortsList providedPorts();
 };
+
+class RecoveryActionClient : public BT::SyncActionNode
+{
+    public:
+        RecoveryActionClient(const std::string& name, const BT::NodeConfiguration& config):
+        BT::SyncActionNode(name,config){}
+        BT::NodeStatus tick() override;
+        static BT::PortsList providedPorts();
+};

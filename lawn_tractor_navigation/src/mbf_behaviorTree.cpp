@@ -84,19 +84,52 @@ BT::NodeStatus ExePathActionClient::tick(){
             break;
           }
           default:
+            ROS_INFO("Failure to reach goal before timeout %s",state.toString().c_str());
             return NodeStatus::FAILURE;
             break;
         }
     }
   else
       return NodeStatus::FAILURE; 
-  return NodeStatus::SUCCESS;
 }
 
 BT::PortsList ExePathActionClient::providedPorts(){
   return{
     BT::InputPort<std::string>("server_name"),
     BT::InputPort<mbf_msgs::GetPathResultConstPtr>("pathPtr") 
+  };
+}
+
+BT::NodeStatus RecoveryActionClient::tick(){
+    actionlib::SimpleActionClient<mbf_msgs::RecoveryAction> ac(getInput<std::string>("server_name").value(), true);
+    ac.waitForServer();
+    mbf_msgs::RecoveryGoal goal;
+    ac.sendGoal(goal); //do we have to populate the goal with anything?
+
+    bool finished_before_timeout = ac.waitForResult(ros::Duration(120.0)); 
+    if (finished_before_timeout)
+    {
+        actionlib::SimpleClientGoalState state = ac.getState();
+        switch(state.state_)
+        {
+          case actionlib::SimpleClientGoalState::SUCCEEDED:{
+            ROS_INFO("Correctly Recovered");
+            return NodeStatus::SUCCESS;
+            break;
+          }
+          default:
+            ROS_INFO("Was Not correctly able to recover");
+            return NodeStatus::FAILURE;
+            break;
+        }
+    }
+  else
+      return NodeStatus::FAILURE; 
+}
+
+BT::PortsList RecoveryActionClient::providedPorts(){
+  return{
+   BT::InputPort<std::string>("server_name") 
   };
 }
 
@@ -116,6 +149,7 @@ int main(int argc, char **argv)
   factory.registerNodeType<WaitForGoal>("WaitForGoal");
   factory.registerNodeType<GetPathActionClient>("GetPath");
   factory.registerNodeType<ExePathActionClient>("ExePath");
+  factory.registerNodeType<RecoveryActionClient>("Recovery");
   auto tree = factory.createTreeFromFile(completeFilepath);
 
   NodeStatus status = NodeStatus::IDLE;
