@@ -28,7 +28,7 @@ RUN mv /bin/sh /bin/sh-old && \
     ln -s /bin/bash /bin/sh
 
 # download lawn_tractor_sim source 
-RUN git clone -b '13-MBF-BehaviorTree' --single-branch --depth 1 https://github.com/ros-agriculture/lawn_tractor.git 
+RUN git clone -b 'develop' --single-branch --depth 1 https://github.com/ros-agriculture/lawn_tractor.git 
 RUN git clone https://github.com/bsb808/geonav_transform.git
 
 RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
