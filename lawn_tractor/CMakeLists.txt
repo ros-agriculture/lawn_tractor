@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(lawn_tractor)
-find_package(catkin cmake_modules REQUIRED)
+find_package(catkin REQUIRED)
 catkin_metapackage()
-find_package(Eigen3 REQUIRED)

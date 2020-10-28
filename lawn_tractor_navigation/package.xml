@@ -30,6 +30,8 @@
   <build_depend>move_base</build_depend>
   <build_depend>move_base_msgs</build_depend>
   <build_depend>mbf_msgs</build_depend>
+  <build_depend>mbf_costmap_nav</build_depend>
+  <build_depend>map_server</build_depend>
   <exec_depend>geonav_transform</exec_depend>
   <exec_depend>teb_local_planner</exec_depend>
   <exec_depend>mbf_costmap_core</exec_depend>
