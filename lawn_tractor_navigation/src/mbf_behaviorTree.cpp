@@ -8,9 +8,10 @@
 BT::NodeStatus WaitForGoal::tick() {
     geometry_msgs::PoseStamped goalpose;
     geometry_msgs::PoseStampedConstPtr msg = 
-      ros::topic::waitForMessage<geometry_msgs::PoseStamped>(goal_topic_,ros::Duration(10));
+      ros::topic::waitForMessage<geometry_msgs::PoseStamped>(goal_topic_,ros::Duration(600));
       if (msg == NULL){
-        return NodeStatus::FAILURE;
+         ROS_INFO("FAILED HERE");	
+	 return NodeStatus::FAILURE;
       }
       else {
         setOutput<geometry_msgs::PoseStamped>("goal",*msg); //TODO: Pass around ConstPtr 
@@ -138,7 +139,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "mbf_behaviorTree");
   ros::NodeHandle nh;
   std::string xml_file;
-  std::string pkgpath = ros::package::getPath("lawn_tractor_navigation");
+  std::string pkgpath = ros::package::getPath("lawn_tractor_navigation"); // TODO: make this a param
   std::string filepathprefix = pkgpath + "/config/behavior_tree/";
   nh.param<std::string>("xml_file", xml_file, "movebaseflex_tree.xml");
 
@@ -168,4 +169,3 @@ int main(int argc, char **argv)
 
   return 0;
 }
-
