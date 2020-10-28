@@ -8,9 +8,10 @@
 BT::NodeStatus WaitForGoal::tick() {
     geometry_msgs::PoseStamped goalpose;
     geometry_msgs::PoseStampedConstPtr msg = 
-      ros::topic::waitForMessage<geometry_msgs::PoseStamped>(goal_topic_,ros::Duration(10));
+      ros::topic::waitForMessage<geometry_msgs::PoseStamped>(goal_topic_,ros::Duration(600));
       if (msg == NULL){
-        return NodeStatus::FAILURE;
+         ROS_INFO("FAILED HERE");	
+	 return NodeStatus::FAILURE;
       }
       else {
         setOutput<geometry_msgs::PoseStamped>("goal",*msg); //TODO: Pass around ConstPtr 
@@ -84,13 +85,13 @@ BT::NodeStatus ExePathActionClient::tick(){
             break;
           }
           default:
+            ROS_INFO("Failure to reach goal before timeout %s",state.toString().c_str());
             return NodeStatus::FAILURE;
             break;
         }
     }
   else
       return NodeStatus::FAILURE; 
-  return NodeStatus::SUCCESS;
 }
 
 BT::PortsList ExePathActionClient::providedPorts(){
@@ -100,12 +101,45 @@ BT::PortsList ExePathActionClient::providedPorts(){
   };
 }
 
+BT::NodeStatus RecoveryActionClient::tick(){
+    actionlib::SimpleActionClient<mbf_msgs::RecoveryAction> ac(getInput<std::string>("server_name").value(), true);
+    ac.waitForServer();
+    mbf_msgs::RecoveryGoal goal;
+    ac.sendGoal(goal); //do we have to populate the goal with anything?
+
+    bool finished_before_timeout = ac.waitForResult(ros::Duration(120.0)); 
+    if (finished_before_timeout)
+    {
+        actionlib::SimpleClientGoalState state = ac.getState();
+        switch(state.state_)
+        {
+          case actionlib::SimpleClientGoalState::SUCCEEDED:{
+            ROS_INFO("Correctly Recovered");
+            return NodeStatus::SUCCESS;
+            break;
+          }
+          default:
+            ROS_INFO("Was Not correctly able to recover");
+            return NodeStatus::FAILURE;
+            break;
+        }
+    }
+  else
+      return NodeStatus::FAILURE; 
+}
+
+BT::PortsList RecoveryActionClient::providedPorts(){
+  return{
+   BT::InputPort<std::string>("server_name") 
+  };
+}
+
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "mbf_behaviorTree");
   ros::NodeHandle nh;
   std::string xml_file;
-  std::string pkgpath = ros::package::getPath("lawn_tractor_navigation");
+  std::string pkgpath = ros::package::getPath("lawn_tractor_navigation"); // TODO: make this a param
   std::string filepathprefix = pkgpath + "/config/behavior_tree/";
   nh.param<std::string>("xml_file", xml_file, "movebaseflex_tree.xml");
 
@@ -116,6 +150,7 @@ int main(int argc, char **argv)
   factory.registerNodeType<WaitForGoal>("WaitForGoal");
   factory.registerNodeType<GetPathActionClient>("GetPath");
   factory.registerNodeType<ExePathActionClient>("ExePath");
+  factory.registerNodeType<RecoveryActionClient>("Recovery");
   auto tree = factory.createTreeFromFile(completeFilepath);
 
   NodeStatus status = NodeStatus::IDLE;
@@ -134,4 +169,3 @@ int main(int argc, char **argv)
 
   return 0;
 }
-

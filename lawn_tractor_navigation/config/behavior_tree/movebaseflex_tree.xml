@@ -1,11 +1,16 @@
  <root >
      <BehaviorTree>
-        <Sequence>
-            <Timeout msec="10000">
-                <WaitForGoal goal="{goal_pose}" />
-            </Timeout>
-            <GetPath server_name="move_base_flex/get_path" goalpose="{goal_pose}" result="{pathResultPtr}"/>
-            <ExePath server_name="move_base_flex/exe_path" pathPtr="{pathResultPtr}" />
-        </Sequence>
+        <Repeat num_cycles="10">
+            <Sequence>
+                <Timeout msec="10000">
+                    <WaitForGoal goal="{goal_pose}" />
+                </Timeout>
+                <GetPath server_name="move_base_flex/get_path" goalpose="{goal_pose}" result="{pathResultPtr}"/>
+                <Fallback>
+                    <ExePath server_name="move_base_flex/exe_path" pathPtr="{pathResultPtr}" />
+                    <Recovery server_name="move_base_flex/recovery" />
+                </Fallback>
+            </Sequence>
+        </Repeat>
      </BehaviorTree>
  </root>

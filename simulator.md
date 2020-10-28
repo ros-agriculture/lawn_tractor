@@ -50,10 +50,6 @@ prompt/catkin_ws/src$ git clone https://github.com/ros-agriculture/geonav_transf
 ```
 
 ```
-prompt/catkin_ws/src$ git clone https://github.com/ros-agriculture/path_planner
-```
-
-```
 prompt/catkin_ws/src$ cd ..
 
 ```
