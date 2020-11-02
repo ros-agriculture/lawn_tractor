@@ -2,7 +2,7 @@
 import rospy
 # Import geonav tranformation module
 import geonav_transform.geonav_conversions as gc
-reload(gc)
+#reload(gc)
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import NavSatFix
 
