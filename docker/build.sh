@@ -1,0 +1,1 @@
+docker build ../. -t rosagriculture/lawn_tractor:latest
