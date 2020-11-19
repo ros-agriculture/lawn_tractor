@@ -14,29 +14,29 @@ RUN apt-get -qq update && \
     apt-get -qq install -y \
 	apt-utils \
 	libeigen3-dev \
-        python-catkin-tools  \
-        less \
-        ssh \
+    python-catkin-tools  \
+    less \
+    ssh \
 	vim \
 	terminator \
-        git-core \
-        bash-completion \
-        wget
+    git-core \
+    bash-completion \
+    wget \
+    qtbase5-dev \ 
+    libqt5svg5-dev \ 
+    libzmq3-dev \ 
+    libdw-dev
 
 # HACK, replacing shell with bash for later docker build commands
 RUN mv /bin/sh /bin/sh-old && \
     ln -s /bin/bash /bin/sh
 
-# download lawn_tractor_sim source 
-RUN git clone -b 'develop' --single-branch --depth 1 https://github.com/ros-agriculture/lawn_tractor.git 
-RUN git clone https://github.com/bsb808/geonav_transform.git
+# get source
+COPY . .
 
 RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 RUN echo "source $CATKIN_WS/devel/setup.bash" >> ~/.bashrc
 
-# Why do I have to do this?
-#RUN apt-get -qq update && apt-get -qq upgrade && \
-    # sudo apt-get -qq install -y ros-kinetic-teb-local-planner && \
 RUN rosdep update && \
     rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} --as-root=apt:false && \
     apt-get -qq upgrade && \
@@ -46,7 +46,13 @@ RUN rosdep update && \
 WORKDIR $CATKIN_WS
 ENV TERM xterm
 ENV PYTHONIOENCODING UTF-8 
-
+RUN git clone https://github.com/BehaviorTree/Groot.git && \
+   cd Groot && \
+   git submodule update --init --recursive && \
+   mkdir build; cd build && \
+   cmake .. && \
+   make && \
+   cd ..
 RUN source /ros_entrypoint.sh && \
     catkin build --no-status
 
