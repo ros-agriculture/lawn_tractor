@@ -54,7 +54,8 @@ RUN git clone https://github.com/BehaviorTree/Groot.git && \
    make && \
    cd ..
 RUN source /ros_entrypoint.sh && \
-    catkin build --no-status
+    catkin build --no-status && \
+    source $CATKIN_WS/devel/setup.bash
 
 
     
