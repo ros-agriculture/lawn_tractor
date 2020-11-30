@@ -22,7 +22,7 @@ public:
     BT::NodeStatus tick() override;
     static BT::PortsList providedPorts();
 private:
-    const std::string goal_topic_= "/move_base_simple/goal";
+    const std::string goal_topic_= "move_base_simple/goal";
 };
 
 class GetPathActionClient : public BT::SyncActionNode
