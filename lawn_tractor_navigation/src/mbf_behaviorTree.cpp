@@ -137,7 +137,7 @@ BT::PortsList RecoveryActionClient::providedPorts(){
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "mbf_behaviorTree");
-  ros::NodeHandle nh;
+  ros::NodeHandle nh("~");
   std::string xml_file;
   std::string pkgpath = ros::package::getPath("lawn_tractor_navigation"); // TODO: make this a param
   std::string filepathprefix = pkgpath + "/config/behavior_tree/";
