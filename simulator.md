@@ -12,7 +12,7 @@ $ sudo curl -sSL https://get.docker.com | sudo sh
 #### **Get Start File**
 
 ```
-$ wget https://raw.githubusercontent.com/ros-agriculture/ros_lawn_tractor/master/docker/start.sh
+$ wget https://raw.githubusercontent.com/ros-agriculture/lawn_tractor/master/docker/start.sh
 ```
 ```
 $ sudo chmod +x start.sh
