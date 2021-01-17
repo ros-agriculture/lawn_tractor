@@ -11,7 +11,7 @@ From this community initiative we obtained the following products and tools:
 
 
 ## Join us.
-This is an open project and you are invited to work in it with the team. Present yourself on one of the following platforms: [the SLACK group](http://rosagriculture.slack.com/), [the facebook page](https://facebook.com/ROSAgriculture), [twitt us](https://twitter.com/ROSAgriculture) or [a Whatsapp](https://wa.me/+12142933679) to the coordinator.
+This is an open project and you are invited to work in it with the team. Present yourself on one of the following platforms: [the Discourse group](https://discourse.ros.org/c/ros-agriculture/63).
 
 ## Licensing.
 lawn_tractor is released under the MIT license.
